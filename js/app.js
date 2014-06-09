@@ -1,6 +1,6 @@
 angular.module("myApp", [])
 .controller('MyController',
- function mycontroller($scope){
+ function($scope){
    $scope.clock = {
      now: new Date()
  };
