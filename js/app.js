@@ -20,4 +20,9 @@ angular.module("myApp", [])
    $scope.subtract = function(amount){
      $scope.counter -= amount;
    };
+ })
+ .controller('SecondController', function($scope){
+   $scope.person = {
+     name: "Rick Cerf"
+   };
  });
