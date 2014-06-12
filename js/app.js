@@ -71,13 +71,19 @@ angular.module('myApp', ['emailParser'])
   })
 })
 
-.controller('CustomStringController', ['$scope', 'EmailParser', function ($scope, EmailParser) {
-  $scope.$watch('emailBody', function (body) {
-    if (body){
-      $scope.previewText = EmailParser.parse(body, {
-        to: $scope.to
-      });
-    }
-  })
+.controller('CustomStringController', ['$scope', 'EmailParser',
+  function ($scope, EmailParser) {
+    $scope.$watch('emailBody', function (body) {
+      if (body){
+        $scope.previewText = EmailParser.parse(body, {
+          to: $scope.to
+        });
+      }
+    })
+}])
+
+.controller('Democontroller', ['$scope', '$filter',
+  function($scope, $filter){
+    $scope.name = $filter('lowercase')('Rick');
 }]);
 
