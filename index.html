@@ -41,6 +41,13 @@
       <textarea ng-model="emailBody"></textarea>
       <pre>{{ previewText }}</pre>
     </div>
+    <div ng-controller="CustomStringController">
+      <input ng-model="to"
+             type="email"
+            placeholder="Recipient"/>
+      <textarea ng-model="emailBody"></textarea>
+      <pre>__ previewText __</pre>
+    </div>
     <script type="text/javascript" src="js/app.js">
     </script>
   </body>
