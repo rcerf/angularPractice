@@ -82,7 +82,7 @@ angular.module('myApp', ['emailParser'])
     })
 }])
 
-.controller('Democontroller', ['$scope', '$filter',
+.controller('DemoController', ['$scope', '$filter',
   function($scope, $filter){
     $scope.name = $filter('lowercase')('Rick');
 }]);
