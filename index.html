@@ -28,6 +28,19 @@
       </div>
       {{person}}
     </div>
+    <div ng-controller="ParseController">
+      <input ng-model="expr"
+             type="text"
+            placeholder="Enter an expression"/>
+      <h2>{{ parsedValue }}</h2>
+    </div>
+    <div ng-controller="StringController">
+      <input ng-model="to"
+             type="email"
+            placeholder="Recipient"/>
+      <textarea ng-model="emailBody"></textarea>
+      <pre>{{ previewText }}</pre>
+    </div>
     <script type="text/javascript" src="js/app.js">
     </script>
   </body>

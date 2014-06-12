@@ -31,10 +31,28 @@ angular.module("myApp", [])
 .controller('ParentController', function($scope){
   $scope.person = {greeted: false};
 })
+
 .controller('ChildController', function($scope){
   $scope.sayHello = function(){
-    console.log(this);
     this.person.name = "Rick Cerf";
     $scope.person.greeted = true;
   }
+})
+
+.controller('ParseController', function($scope, $parse){
+  $scope.$watch('expr', function(newVal, oldVal, scope){
+    if (newVal !== oldVal) {
+      var parseFun = $parse(newVal);
+      $scope.parsedValue = parseFun(scope);
+    }
+  })
+})
+
+.controller('StringController', function($scope, $interpolate) {
+  $scope.$watch('emailBody', function(body){
+    if(body){
+      var template = $interpolate(body);
+      $scope.previewText = template({to: $scope.to});
+    }
+  })
 });
