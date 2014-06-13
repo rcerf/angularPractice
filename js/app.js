@@ -45,12 +45,13 @@ angular.module('myApp', ['emailParser'])
 .controller('ParentController', function($scope){
   $scope.person = {greeted: false};
 })
-
 .controller('ChildController', function($scope){
   $scope.sayHello = function(){
+    console.log(this);
     this.person.name = "Rick Cerf";
     $scope.person.greeted = true;
   }
+<<<<<<< HEAD
 })
 
 .controller('ParseController', function($scope, $parse){
@@ -87,3 +88,6 @@ angular.module('myApp', ['emailParser'])
     $scope.name = $filter('lowercase')('Rick');
 }]);
 
+=======
+});
+>>>>>>> parent of 6654470... string interpolation
