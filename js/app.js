@@ -1,18 +1,4 @@
-angular.module('emailParser', [])
-.config(['$interpolateProvider', function ($interpolateProvider) {
-  $interpolateProvider.startSymbol('__');
-  $interpolateProvider.endSymbol('__');
-}])
-.factory('EmailParser', ['$interpolate', function ($interpolate) {
-  return {
-    parse: function(text, context) {
-      var template = $interpolate(text);
-      return template(context);
-    }
-  }
-}]);
-
-angular.module('myApp', ['emailParser'])
+angular.module('myApp', [])
 .controller('MyController', function($scope){
     $scope.clock = {
       now: new Date()
@@ -51,7 +37,6 @@ angular.module('myApp', ['emailParser'])
     this.person.name = "Rick Cerf";
     $scope.person.greeted = true;
   }
-<<<<<<< HEAD
 })
 
 .controller('ParseController', function($scope, $parse){
@@ -72,22 +57,7 @@ angular.module('myApp', ['emailParser'])
   })
 })
 
-.controller('CustomStringController', ['$scope', 'EmailParser',
-  function ($scope, EmailParser) {
-    $scope.$watch('emailBody', function (body) {
-      if (body){
-        $scope.previewText = EmailParser.parse(body, {
-          to: $scope.to
-        });
-      }
-    })
-}])
-
 .controller('DemoController', ['$scope', '$filter',
   function($scope, $filter){
     $scope.name = $filter('lowercase')('Rick');
 }]);
-
-=======
-});
->>>>>>> parent of 6654470... string interpolation
